@@ -1,3 +1,5 @@
 #BlueJ class context
 comment0.target=Rook
-numComments=1
+comment1.params=c
+comment1.target=Rook(PieceColour)
+numComments=2
