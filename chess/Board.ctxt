@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Board
+comment1.params=
+comment1.target=Board()
+comment2.params=
+comment2.target=Square[][]\ getBoard()
+comment3.params=
+comment3.target=void\ initialisePieces()
+comment4.params=
+comment4.target=void\ printBoard()
+comment5.params=i0\ j0\ i1\ j1\ p
+comment5.target=boolean\ movePiece(int,\ int,\ int,\ int,\ Piece)
+comment6.params=iIn\ jIn\ p
+comment6.target=void\ setPiece(int,\ int,\ Piece)
+comment7.params=iIn\ jIn
+comment7.target=Piece\ getPiece(int,\ int)
+comment8.params=i\ j
+comment8.target=boolean\ hasPiece(int,\ int)
+numComments=9

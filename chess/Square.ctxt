@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Square
+comment1.params=iIn\ jIn
+comment1.target=Square(int,\ int)
+comment2.params=
+comment2.target=Piece\ getPiece()
+comment3.params=piece
+comment3.target=void\ setPiece(Piece)
+comment4.params=
+comment4.target=void\ removePiece()
+comment5.params=
+comment5.target=boolean\ hasPiece()
+comment6.params=
+comment6.target=int\ getI()
+comment7.params=
+comment7.target=int\ getJ()
+numComments=8
