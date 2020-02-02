@@ -15,12 +15,75 @@ public class Board {
     }
 
     public void initialisePieces(){
-        Piece rook = new Piece();
-        rook.colour = PieceColour.BLACK;
-        rook.setSymbol(""+(char) 0x265C);
-        setPiece(0, 0, rook);
-        setPiece(0, 7, rook);
-        System.out.println(board[0][0].getPiece().getSymbol()+"here");
+
+        Rook blackRook = new Rook();
+        blackRook.colour = PieceColour.BLACK;
+        blackRook.setSymbol(""+(char) 0x265C);
+        setPiece(0, 0, blackRook);
+        setPiece(0, 7, blackRook);
+
+        Knight blackKnight = new Knight();
+        blackKnight.colour = PieceColour.BLACK;
+        blackKnight.setSymbol(""+(char) 0x265E);
+        setPiece(0, 1, blackKnight);
+        setPiece(0, 6, blackKnight);
+
+        Bishop blackBishop = new Bishop();
+        blackBishop.colour = PieceColour.BLACK;
+        blackBishop.setSymbol(""+(char) 0x265D);
+        setPiece(0, 2, blackBishop);
+        setPiece(0, 5, blackBishop);
+
+        Queen blackQueen = new Queen();
+        blackQueen.colour = PieceColour.BLACK;
+        blackQueen.setSymbol(""+(char) 0x265B);
+        setPiece(0, 3, blackQueen);
+
+        King blackKing = new King();
+        blackKing.colour = PieceColour.BLACK;
+        blackKing.setSymbol(""+(char) 0x265A);
+        setPiece(0, 4, blackKing);
+
+        Pawn blackPawn = new Pawn();
+        blackPawn.colour = PieceColour.BLACK;
+        blackPawn.setSymbol(""+(char) 0x265F);
+        for(int i=0;i<board[1].length;i++)
+            setPiece(1, i, blackPawn);
+
+        Rook whiteRook = new Rook();
+        whiteRook.colour = PieceColour.WHITE;
+        whiteRook.setSymbol(""+(char) 0x2656);
+        setPiece(7, 0, whiteRook);
+        setPiece(7, 7, whiteRook);
+
+        Knight whiteKnight = new Knight();
+        whiteKnight.colour = PieceColour.WHITE;
+        whiteKnight.setSymbol(""+(char) 0x2658);
+        setPiece(7, 1, whiteKnight);
+        setPiece(7, 6, whiteKnight);
+
+        Bishop whiteBishop = new Bishop();
+        whiteBishop.colour = PieceColour.WHITE;
+        whiteBishop.setSymbol(""+(char) 0x2657);
+        setPiece(7, 2, whiteBishop);
+        setPiece(7, 5, whiteBishop);
+
+        Queen whiteQueen = new Queen();
+        whiteQueen.colour = PieceColour.WHITE;
+        whiteQueen.setSymbol(""+(char) 0x2655);
+        setPiece(7, 3, whiteQueen);
+
+        King whiteKing = new King();
+        whiteKing.colour = PieceColour.WHITE;
+        whiteKing.setSymbol(""+(char) 0x2654);
+        setPiece(7, 4, whiteKing);
+
+        Pawn whitePawn = new Pawn();
+        whitePawn.colour = PieceColour.WHITE;
+        whitePawn.setSymbol(""+(char) 0x2659);
+        for(int i=0;i<board[6].length;i++)
+            setPiece(6, i, whitePawn);
+
     }
 
     public void printBoard(){
@@ -36,9 +99,9 @@ public class Board {
                 else if ((j==0) && !board[i][j].hasPiece())
                     System.out.print(row+"  " );
                 else if (board[i][j].hasPiece())                    
-                    System.out.print("| "+board[i][j].getPiece().getSymbol());                  
+                    System.out.print("|"+board[i][j].getPiece().getSymbol());                  
                 else                    
-                    System.out.print("| ");     
+                    System.out.print(" | ");     
             }               
             System.out.print("  "+row+"\n");
         }

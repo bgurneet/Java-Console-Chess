@@ -6,6 +6,7 @@ public class Piece {
     protected PieceColour colour;
 
     public Piece() {
+        
     }
 
     public String getSymbol() {
