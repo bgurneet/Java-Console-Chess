@@ -71,11 +71,11 @@ public class Board {
             int row=i+1;
             for (int j=0; j<board[1].length; j++){
                 if ((j==0) && board[i][j].hasPiece())
-                    System.out.print(row+" "+board[i][j].getPiece().getSymbol());  
+                    System.out.print(row+" "+getPiece(i, j).getSymbol());  
                 else if ((j==0) && !board[i][j].hasPiece())
                     System.out.print(row+"  " );
                 else if (board[i][j].hasPiece())                    
-                    System.out.print("|"+board[i][j].getPiece().getSymbol());                  
+                    System.out.print("|"+getPiece(i, j).getSymbol());                  
                 else                    
                     System.out.print(" | ");     
             }               
@@ -87,7 +87,7 @@ public class Board {
 
     public boolean movePiece(int i0, int j0, int i1, int j1, Piece p){
         boolean gamewon = false;
-        if((hasPiece(i1, j1)) && (board[i1][j1].getPiece().getSymbol() == ""+(char) 0x265a))
+        if((hasPiece(i1, j1)) && (getPiece(i1, j1).getSymbol() == ""+(char) 0x265a))
             gamewon = true;
         board[i1][j1] = board[i0][j0];
         board[i0][j0] = new Square(i0, j0);
@@ -99,7 +99,7 @@ public class Board {
     }
 
     public Piece getPiece(int iIn, int jIn){
-        return new Piece();
+        return board[iIn][jIn].getPiece();
     }
 
     public boolean hasPiece(int i, int j){   

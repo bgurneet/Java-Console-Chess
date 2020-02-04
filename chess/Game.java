@@ -64,8 +64,13 @@ public class Game {
                 }
                 // origin and destination coordinates are validated now
                 // move the piece to the new position
-                blackWins = b.movePiece(origin[0], origin[1], destination[0], destination[1], originSquare.getPiece());
-                break;
+                if(originSquare.getPiece().isLegitMove(origin[0], origin[1], destination[0], destination[1])) {
+                    blackWins = b.movePiece(origin[0], origin[1], destination[0], destination[1], originSquare.getPiece());
+                    break;
+                }
+                else {
+                    System.out.println("ERROR: Invalid Move!");
+                }
             }
             b.printBoard();
             if(blackWins) {

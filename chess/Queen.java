@@ -8,4 +8,8 @@ public class Queen extends Piece {
         else
             this.setSymbol(""+(char) 0x265B);
     }
+    
+    public boolean isLegitMove(int currentRow, int currentCol, int newRow, int newCol) {
+        return true;
+    }
 }

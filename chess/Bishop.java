@@ -1,5 +1,4 @@
- 
-
+ import java.lang.*;
 public class Bishop extends Piece{
 
     public Bishop(PieceColour c) {
@@ -10,4 +9,7 @@ public class Bishop extends Piece{
             this.setSymbol(""+(char) 0x265D);
     }
     
+    public boolean isLegitMove(int currentRow, int currentCol, int newRow, int newCol) {
+        return true;
+    }
 }

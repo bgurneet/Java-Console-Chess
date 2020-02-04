@@ -2,4 +2,6 @@
 comment0.target=Knight
 comment1.params=c
 comment1.target=Knight(PieceColour)
-numComments=2
+comment2.params=currentRow\ currentCol\ newRow\ newCol
+comment2.target=boolean\ isLegitMove(int,\ int,\ int,\ int)
+numComments=3
