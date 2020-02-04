@@ -10,6 +10,28 @@ public class Bishop extends Piece{
     }
     
     public boolean isLegitMove(int currentRow, int currentCol, int newRow, int newCol) {
-        return true;
+        // cannot pass through players
+        // can only move diagonally -- (top left - bottom right) or (top right - bottom left)
+        Square[][] board = Board.getBoard();
+        boolean validMove = true;
+        if(!(Math.abs(currentRow - newRow) == Math.abs(currentCol - newCol))) {
+            System.out.println("here");
+            validMove = false;
+        }
+        else {
+            int diff = Math.abs(currentRow - newRow);
+            //int min = Math.min(currentRow, newRow);
+            //int max = Math.max(currentRow, newRow);
+            int negFactorRow = (currentRow > newRow) ? -1:1;
+            int negFactorCol = (currentCol > newCol) ? -1:1;
+            for(int i=1;i<diff;i++) {
+                if(board[currentRow + (i * negFactorRow)][currentCol + (i * negFactorCol)].hasPiece()){
+                    validMove = false;
+                    break;
+                }
+            }
+        }
+        
+        return validMove;
     }
 }

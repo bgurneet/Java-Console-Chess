@@ -49,7 +49,6 @@ public class Pawn extends Piece{
             validMove = false;
         }
         
-        System.out.println(allowedTwo);
         return validMove;
     }
 }
