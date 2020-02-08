@@ -26,8 +26,16 @@ public class Pawn extends Piece{
         colours.add(PieceColour.BLACK);
         colours.remove(this.colour);
         PieceColour opponent = colours.iterator().next();
-        
-        if(((this.colour == PieceColour.WHITE) && (currentRow < newRow)) 
+        Square originSquare = board[currentRow][currentCol];
+        Square destinationSquare = board[newRow][newCol];
+
+        if(!((originSquare.hasPiece()) && (originSquare.getPiece().getColour() == this.colour))) {
+            validMove = false;
+        }
+        else if((destinationSquare.hasPiece()) && (destinationSquare.getPiece().getColour() == this.colour)) {
+            validMove = false;
+        }
+        else if(((this.colour == PieceColour.WHITE) && (currentRow < newRow)) 
         || ((this.colour == PieceColour.BLACK) && (currentRow > newRow)))
             // piece trying to move backwards
             validMove = false;

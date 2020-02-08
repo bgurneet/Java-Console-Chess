@@ -13,7 +13,21 @@ public class Rook extends Piece{
         boolean validMove = true;
         // there can't be any other piece in the path
         // can only move vertically or horizontally
-        if(currentRow == newRow) {
+        // check if there is piece at selected origin and that the piece is of the players' colour
+        // also check to make sure the destination origin does not have a piece of the players' colour
+        Square originSquare = board[currentRow][currentCol];
+        Square destinationSquare = board[newRow][newCol];
+
+        if(!((originSquare.hasPiece()) && (originSquare.getPiece().getColour() == this.colour))) {
+            validMove = false;
+        }
+        else if((destinationSquare.hasPiece()) && (destinationSquare.getPiece().getColour() == this.colour)) {
+            validMove = false;
+        }
+        else if((currentRow == newRow) && (currentCol == newCol)) {
+            validMove = false;
+        }
+        else if(currentRow == newRow) {
             // moving horizontally
             int min = Math.min(currentCol, newCol);
             int max = Math.max(currentCol, newCol);

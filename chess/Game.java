@@ -14,21 +14,9 @@ public class Game {
             while (true) {
                 System.out.println("--------- Whites move --------");
                 int[] origin = getCoordinatesInput("> Enter Origin");
-                // now check if the origin if at the origin coordinates on the board there is a white piece
                 Square originSquare = board[origin[0]][origin[1]];
-                if(!((originSquare.hasPiece()) && (originSquare.getPiece().getColour() == PieceColour.WHITE))) {
-                    System.out.println("ERROR: Please select a valid piece to move!");
-                    continue;
-                }
                 int[] destination = getCoordinatesInput("> Enter Destination");
-                // there cannot be a white piece at the destination square
                 Square destinationSquare = board[destination[0]][destination[1]];
-                if((destinationSquare.hasPiece()) && (destinationSquare.getPiece().getColour() == PieceColour.WHITE)) {
-                    System.out.println("ERROR: Invalid move!");
-                    continue;
-                }
-                // origin and destination coordinates are validated now
-                // move the piece to the new position
                 if(originSquare.getPiece().isLegitMove(origin[0], origin[1], destination[0], destination[1])) {
                     whiteWins = b.movePiece(origin[0], origin[1], destination[0], destination[1], originSquare.getPiece());
                     break;
@@ -49,21 +37,9 @@ public class Game {
             while (true) {
                 System.out.println("--------- Blacks move --------");
                 int[] origin = getCoordinatesInput("> Enter Origin");
-                // now check if the origin if at the origin coordinates on the board there is a white piece
                 Square originSquare = board[origin[0]][origin[1]];
-                if(!((originSquare.hasPiece()) && (originSquare.getPiece().getColour() == PieceColour.BLACK))) {
-                    System.out.println("ERROR: Please select a valid piece to move!");
-                    continue;
-                }
                 int[] destination = getCoordinatesInput("> Enter Destination");
-                // there cannot be a white piece at the destination square
                 Square destinationSquare = board[destination[0]][destination[1]];
-                if((destinationSquare.hasPiece()) && (destinationSquare.getPiece().getColour() == PieceColour.BLACK)) {
-                    System.out.println("ERROR: Invalid move!");
-                    continue;
-                }
-                // origin and destination coordinates are validated now
-                // move the piece to the new position
                 if(originSquare.getPiece().isLegitMove(origin[0], origin[1], destination[0], destination[1])) {
                     blackWins = b.movePiece(origin[0], origin[1], destination[0], destination[1], originSquare.getPiece());
                     break;

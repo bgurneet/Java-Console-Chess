@@ -14,8 +14,16 @@ public class Bishop extends Piece{
         // can only move diagonally -- (top left - bottom right) or (top right - bottom left)
         Square[][] board = Board.getBoard();
         boolean validMove = true;
-        if(!(Math.abs(currentRow - newRow) == Math.abs(currentCol - newCol))) {
-            System.out.println("here");
+        Square originSquare = board[currentRow][currentCol];
+        Square destinationSquare = board[newRow][newCol];
+
+        if(!((originSquare.hasPiece()) && (originSquare.getPiece().getColour() == this.colour))) {
+            validMove = false;
+        }
+        else if((destinationSquare.hasPiece()) && (destinationSquare.getPiece().getColour() == this.colour)) {
+            validMove = false;
+        }
+        else if(!(Math.abs(currentRow - newRow) == Math.abs(currentCol - newCol))) {
             validMove = false;
         }
         else {
