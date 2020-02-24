@@ -1,4 +1,4 @@
- import java.lang.*;
+import java.lang.*;
 public class Bishop extends Piece{
 
     public Bishop(PieceColour c) {
@@ -28,8 +28,6 @@ public class Bishop extends Piece{
         }
         else {
             int diff = Math.abs(currentRow - newRow);
-            //int min = Math.min(currentRow, newRow);
-            //int max = Math.max(currentRow, newRow);
             int negFactorRow = (currentRow > newRow) ? -1:1;
             int negFactorCol = (currentCol > newCol) ? -1:1;
             for(int i=1;i<diff;i++) {

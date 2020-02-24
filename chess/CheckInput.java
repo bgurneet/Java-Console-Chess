@@ -13,4 +13,8 @@ public class CheckInput {
         }
         return false;
     }
+    
+    public boolean endGame(String input) {
+        return input.toLowerCase().equals("end");
+    }
 }

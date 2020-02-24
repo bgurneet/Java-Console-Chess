@@ -2,4 +2,6 @@
 comment0.target=CheckInput
 comment1.params=input
 comment1.target=boolean\ checkCoordinateValidity(java.lang.String)
-numComments=2
+comment2.params=input
+comment2.target=boolean\ endGame(java.lang.String)
+numComments=3

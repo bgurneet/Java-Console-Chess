@@ -28,8 +28,6 @@ public class Knight extends Piece{
         else {
             int x_distance = Math.abs(currentRow - newRow);
             int y_distance = Math.abs(currentCol - newCol);
-            System.out.println(currentRow+" "+currentCol+" "+newRow+" "+newCol);
-            System.out.println(x_distance+" "+y_distance);
             validMove = ((x_distance == 2) && (y_distance == 1)) || ((x_distance == 1) && (y_distance == 2));
         }
         return validMove;

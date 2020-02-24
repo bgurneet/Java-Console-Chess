@@ -31,7 +31,6 @@ public class Rook extends Piece{
             // moving horizontally
             int min = Math.min(currentCol, newCol);
             int max = Math.max(currentCol, newCol);
-            //TODO: err - 1a to 1h works for some reason
             for(int j=min+1;j<max;j++) {
                 if(board[currentRow][j].hasPiece()) {
                     validMove = false;

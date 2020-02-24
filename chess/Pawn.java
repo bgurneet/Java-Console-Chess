@@ -21,11 +21,6 @@ public class Pawn extends Piece{
         || ((this.colour == PieceColour.BLACK) && (currentRow == 1)));
         int x_distance = Math.abs(currentCol - newCol);
         int y_distance = Math.abs(currentRow - newRow);
-        Set<PieceColour> colours = new HashSet<>();
-        colours.add(PieceColour.WHITE);
-        colours.add(PieceColour.BLACK);
-        colours.remove(this.colour);
-        PieceColour opponent = colours.iterator().next();
         Square originSquare = board[currentRow][currentCol];
         Square destinationSquare = board[newRow][newCol];
 
@@ -48,7 +43,7 @@ public class Pawn extends Piece{
             else if((!allowedTwo) && (y_distance != 1))
                 validMove = false;
         }
-        else if(!((x_distance == 1) && (y_distance == 1) && (board[newRow][newCol].hasPiece()) && (board[newRow][newCol].getPiece().colour == opponent))) {
+        else if(!((x_distance == 1) && (y_distance == 1) && (board[newRow][newCol].hasPiece()) && (board[newRow][newCol].getPiece().colour != this.colour))) {
             // trying to move one block diagonally but there is no enemy piece at destination
             validMove = false;
         }
