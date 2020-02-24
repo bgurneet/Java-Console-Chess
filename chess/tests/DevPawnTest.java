@@ -1,4 +1,4 @@
-package tests;
+package chess;
 
 import static org.junit.Assert.*;
 
